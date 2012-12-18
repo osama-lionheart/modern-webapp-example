@@ -1,0 +1,43 @@
+<form method="POST" action="{{c "apiUrl"}}/users" class="update-form form-horizontal">
+    <fieldset>
+        <legend>
+        {{#if id}}
+            <h3>{{t "user.editTitle"}}</h3>
+        {{else}}
+            <h3>{{t "user.createTitle"}}</h3>
+        {{/if}}
+        </legend>
+
+        <div class="control-group">
+            <label class="control-label" for="firstName">{{t "user.firstName"}}</label>
+            <div class="controls">
+                <input type="text" id="firstName" name="firstName" placeholder="{{t "user.firstName"}}" />
+                <p class="help-block"></p>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="lastName">{{t "user.lastName"}}</label>
+            <div class="controls">
+                <input type="text" id="lastName" name="lastName" placeholder="{{t "user.lastName"}}" />
+                <p class="help-block"></p>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="email">{{t "user.email"}}</label>
+            <div class="controls">
+                <input type="text" id="email" name="email" placeholder="{{t "user.email"}}">
+                <p class="help-block"></p>
+            </div>
+        </div>
+
+        <div class="btn-toolbar">
+            <a href="#{{c "lang"}}/users" class="btn"><i class="icon-chevron-left"></i> {{t "user.back"}}</a>
+            <button type="submit" class="btn pull-right"><i class="icon-ok"></i> {{t "user.save"}}</button>
+            {{#if id}}
+            <button type="button" class="btn delete-model pull-right"><i class="icon-trash"></i> {{t "user.remove"}}</button>
+            {{/if}}
+        </div>
+    </fieldset>
+</form>

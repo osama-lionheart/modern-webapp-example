@@ -1,0 +1,98 @@
+@import url(http://fonts.googleapis.com/css?family=Merienda);
+@import "compass";
+
+$iconSpritePath: "../img/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../img/glyphicons-halflings-white.png";
+
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import "flags.scss";
+
+$footerHeight: 80px;
+$footerBottomMargin: 40px;
+
+html, body {
+    height: 100%;
+}
+
+body, legend {
+    color: hsla(0, 0%, 30%, 1);
+}
+
+.navbar .brand {
+    font-family: 'Merienda', cursive;
+    color: hsla(0, 0%, 50%, 1);
+    text-shadow: 1px 1px 0px hsla(0, 0%, 100%, 1), 2px 2px 0px hsla(0, 0%, 50%, 1);
+    @include transition(#{text-shadow 0.5s, color 0.5s});
+
+    &:hover {
+        color: hsla(210, 50%, 50%, 1);
+        text-shadow: 1px 1px 0px hsla(0, 0%, 100%, 1), 2px 2px 0px hsla(210, 50%, 50%, 1);
+    }
+}
+
+.container {
+    width: auto;
+    max-width: 680px;
+}
+
+.main.container {
+    padding-top: 60px;
+    padding-bottom: ($footerHeight + $footerBottomMargin);
+}
+
+td.empty-box {
+    text-align: center;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto (-$footerHeight - $footerBottomMargin);
+    @include box-sizing(border-box);
+}
+
+footer {
+    background: hsla(0, 0%, 97%, 1);
+    border-top: solid 1px hsla(0, 0%, 90%, 1);
+    border-bottom: solid 1px hsla(0, 0%, 90%, 1);
+    height: $footerHeight;
+    margin-bottom: $footerBottomMargin;
+
+    .credit {
+        margin: 30px 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 979px) {
+    .main.container {
+        padding-top: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+// HACK, that fix a bootstrap issue with dropdowns in responsice navbar.
+.nav-collapse  .dropdown-menu {
+    display: none;
+}
+
+.open > .dropdown-menu {
+    display: block;
+}
+
+.navbar-fixed-top,
+.navbar-static-top {
+    .navbar-inner {
+        @include box-shadow(0 1px 10px hsla(0, 0, 0, 0.1));
+    }
+}
