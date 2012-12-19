@@ -36,6 +36,7 @@ module.exports = function(grunt) {
                     images_dir: 'app/img',
                     javascripts_dir: 'temp/js',
                     force: true,
+                    //debug_info: true, // Uncomment this to enable source map.
                     load: ['app/components/twitter-bootstrap-sass/vendor/assets']
                 }
             }
