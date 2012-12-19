@@ -2,7 +2,7 @@ define({
     navbar: {
         title: 'Example',
         home: 'Home',
-        about: 'About',
+        about: 'View on Github',
         language: 'Language'
     },
 

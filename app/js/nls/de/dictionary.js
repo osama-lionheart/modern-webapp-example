@@ -2,7 +2,6 @@ define({
     navbar: {
         title: 'Beispiel',
         home: 'Zuhause',
-        about: 'Über',
         language: 'Sprache'
     },
 
