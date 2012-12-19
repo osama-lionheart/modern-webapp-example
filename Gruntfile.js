@@ -109,6 +109,10 @@ module.exports = function(grunt) {
         // of the app/ directory. Any .gitignore, .ignore and .buildignore file
         // that might appear in the app/ tree are used to ignore these values
         // during the copy process.
+        // concat css/**/*.css files, inline @import, output a single minified css
+        css: {
+          'css/main.css': ['css/main.css']
+        },
 
         // renames JS/CSS to prepend a hash of their contents for easier
         // versioning
@@ -168,6 +172,4 @@ module.exports = function(grunt) {
 
     // Alias the `test` task to run the `mocha` task instead
     grunt.registerTask('test', 'server:phantom mocha');
-
-    grunt.registerTask('build', 'intro clean coffee compass mkdirs usemin-handler rjs concat min img rev usemin manifest copy time');
 };
